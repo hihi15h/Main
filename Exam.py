@@ -29,6 +29,9 @@ def tan(x):
 
 def atan(x):
   return math.degrees(math.atan(x))
+
+def cos(x):
+  return math.cos(math.radians(x))
   
 def num1(ombre_bois, t, v_kmh, t_roche):
   global hauteur_chateau
@@ -156,12 +159,35 @@ def num11(r2):
   print_variables(v=v)
 
 def num 12(cl0, cl1,cl2, cl3, cl4, cl5):
-cl_dict= {"r": 1, "b": 2, "n": 0}
-cl_list= ["vert", "rouge", "bleu", "blanc"]
-pantalons= cl_list[cl_dict[cl0]+cl_dict[cl3]]
-chemise= cl_list[cl_dict[cl1]+cl_dict[cl4]]
-pois= cl_list[cl_dict[cl2]+cl_dict[cl5]]
-print_variables(pantalons=pantalons, chemise=chemise, pois=pois)
+  cl_dict= {"r": 1, "b": 2, "n": 0}
+  cl_list= ["vert", "rouge", "bleu", "blanc"]
+  pantalons= cl_list[cl_dict[cl0]+cl_dict[cl3]]
+  chemise= cl_list[cl_dict[cl1]+cl_dict[cl4]]
+  pois= cl_list[cl_dict[cl2]+cl_dict[cl5]]
+  print_variables(pantalons=pantalons, chemise=chemise, pois=pois)
+
+def num13(vi, dx1, dt1, vf):
+  a=2(dx-vi*dt1)/dt1**2
+  dx2=(vf**2-vi**2)/2a-dx2
+  dt=(vf-vi)/a
+  dxp=math.sqrt(dx1**2+dx2**2)
+  v=dxp/dt
+  print(v)
+
+def num14(dx1, v1_, v2_, diff, dt):
+  global v1
+  v1=v1_/3.6
+  v2=v2_/3.6
+  vrel1=v2-v1
+  dt2=dt-(dx1-diff)/vrel1
+  vrel2=diff/dt2
+  rep=vrel2-v2
+  print(rep)
+
+def num15(dx, h, lasso, m):
+  a=-v1**2/2/dx
+  ft=m*a/cos(atan(h/lasso))
+  print(ft)
   
 
 print("num 1\n")
