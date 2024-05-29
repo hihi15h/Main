@@ -10,7 +10,7 @@ def print_variables(**vars):
 
 
 def print_precision(variable, nb, precision=3):
-  print(f"{variable}={nb:.{precision}f}")
+  print(f"{variable}: {nb:.{precision}f}")
 
 
 def quadratic_roots(a, b, c):
@@ -46,30 +46,17 @@ def cos(x):
 
 def num1(ombre_bois, t, v_kmh, t_roche):
   global hauteur_chateau
-  print_precision("ombre_bois", ombre_bois)
-  print_precision("t", t)
-  print_precision("v_kmh", v_kmh)
-  print_precision("t_roche", t_roche)
   l_bois = 4.9 * t_roche**2
-  print_precision("longueur bois", l_bois)
   ombre_chateau = v_kmh * t / 3.6
-  print_precision("ombre chateau", ombre_chateau)
   hauteur_chateau = ombre_chateau * l_bois / ombre_bois
   print_precision("hauteur_chateau", hauteur_chateau)
 
 
 def num2(f2, dm, hi2, di2, h_chateau):
-  print_precision("f2", f2)
-  print_precision("distance miroir", dm)
-  print_precision("hauteur image 2", hi2)
-  print_precision("distance image 2", di2)
   global do1
   do2 = 1 / (1 / f2 - 1 / di2)
-  print_precision("do2", do2)
   hi1 = -hi2 * do2 / di2
-  print_precision("hi1", hi1)
   di1 = dm - do2
-  print_precision("di1", di1)
   do1 = di1 * h_chateau / hi1
   print_precision("distance chateau", do1)
 
@@ -79,9 +66,7 @@ def num3(m_, vf, theta1, d_rampe, h_tour):
   theta = theta1
   m = m_
   delta_h = h_tour / 2
-  print_precision("delta_h", delta_h)
   e_tot = m / 2 * vf**2 + 9.8 * m * delta_h
-  print_precision("e_tot", e_tot)
   k = 2 * (e_tot) / d_rampe**2
   print_precision("K", k)
 
@@ -89,10 +74,10 @@ def num3(m_, vf, theta1, d_rampe, h_tour):
 def num4(m2, coef, A1, A2, theta_):
   F_tension = m2 * 9.8 * math.sin(math.radians(theta_)) + 9.8 * m2 * math.cos(
       math.radians(theta_)) * coef
-  print_precision("F_tension2", F_tension)
   Fx = math.sin(math.radians(A2)) * F_tension
   Ft2 = Fx / math.sin(math.radians(A1))
   print_precision("Ft1", Ft2)
+  print_precision("Ft2", F_tension)
 
 
 def num5(type, R1, R2, Ver2, hi):
@@ -116,9 +101,7 @@ def num5(type, R1, R2, Ver2, hi):
   elif type == "menisque divergent":
     R2 = -R2
   f1 = 1 / ((1.52 - 1) * (1 / R1 + 1 / R2))
-  print_precision("f1", f1)
   ftot = 1 / (1 / f1 + Ver2)
-  print_precision("ftot", ftot)
   ho = -0.3
   Do = ftot * (1 - ho / hi)
   print_precision("Do", Do)
