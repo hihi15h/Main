@@ -150,6 +150,18 @@ def num10():
   vf=math.sqrt(vfy**2+(vi*sin(90-theta_8))**2)
   ek=m*vf**2/2
   print_variables(vfy=vfy, vf=vf, ek=ek)
+
+def num11(r2):
+  v=math.sqrt(3.9869*10**14/(6380+r2)/1000)/3.6
+  print_variables(v=v)
+
+def num 12(cl0, cl1,cl2, cl3, cl4, cl5):
+cl_dict= {"r": 1, "b": 2, "n": 0}
+cl_list= ["vert", "rouge", "bleu", "blanc"]
+pantalons= cl_list[cl_dict[cl0]+cl_dict[cl3]]
+chemise= cl_list[cl_dict[cl1]+cl_dict[cl4]]
+pois= cl_list[cl_dict[cl2]+cl_dict[cl5]]
+print_variables(pantalons=pantalons, chemise=chemise, pois=pois)
   
 
 print("num 1\n")
